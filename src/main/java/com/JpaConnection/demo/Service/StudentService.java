@@ -34,4 +34,8 @@ public class StudentService {
     public List<Student> getByDepartmentandPlace(String dept, String place) {
         return studentInterface.findByDeptAndPlace(dept,place);
     }
+
+    public void deleteAll(){
+        studentInterface.deleteAll();
+    }
 }

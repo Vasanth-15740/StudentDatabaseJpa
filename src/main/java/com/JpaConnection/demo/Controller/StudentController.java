@@ -26,10 +26,16 @@ public class StudentController {
          return new ResponseEntity<>("Added Successfully", HttpStatus.OK);
     }
 
-    @DeleteMapping("/student/{id}")
+    @DeleteMapping("/student/delete/{id}")
     public String delete(@RequestBody @PathVariable("id") int id){
         studentService.delete(id);
         return  id + " " + "Deleted Successfully";
+    }
+
+    @DeleteMapping("/student/deleteall")
+    public String deleteall(){
+        studentService.deleteAll();
+        return "Dropped Database";
     }
 
     @PutMapping("/student/update")
