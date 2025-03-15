@@ -9,7 +9,8 @@ import java.util.List;
 @Repository
 public interface StudentInterface extends JpaRepository<Student, Integer> {
 
-    List<Student> findByDept(String dept);
+    List<Student>findByDept(String dept);
+
     @Query(nativeQuery = true,value = "select*from student where dept=:dept and place=:place")
     List<Student> findByDeptAndPlace(@Param("dept")String dept, @Param("place") String place);
 
